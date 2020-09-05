@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星川の音</title>
+</head>
+<body>
+    <div id="SoundList"></div>
+
+    <style>
+        #SoundList{
+            position: absolute;
+            width: 100%;
+            height: auto;
+        }
+        .content{
+            position: relative;
+            width: 80%;
+            height: 30%;
+            left: 10%;
+
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            font-weight: bold;
+            color: #FAB80D;
+            background: #FFF;
+            border: solid 3px #FAB80D;
+            border-radius: 10px;
+        }
+        .audio{
+            position: relative;
+            width: 80%;
+            left: 10%;
+        }
+        .title{
+            position: relative;
+            font-size: 5vmin;
+            text-align: center;
+        }
+    </style>
+    <script>
+        const SoundList = [
+
+            {
+                title:"全部",
+                file:"main.mp3"
+            },
+            {
+                title:"ァ",
+                file:"ァ.mp3"
+            },
+            {
+                title:"ふんァ!ふんふんァ",
+                file:"ふんァふんふんァ.mp3"
+            },
+            {
+                title:"ふんァ",
+                file:"ふんァ.mp3"
+            },
+            {
+                title:"ぷんァ",
+                file:"ぷんァ.mp3"
+            },
+            {
+                title:"ふんふん 1",
+                file:"ふんふん.mp3"
+            },
+            {
+                title:"ふんふん 2",
+                file:"ふんふん_2.mp3"
+            },
+            {
+                title:"ふんふんァ 1",
+                file:"ふんふんァ.mp3"
+            },
+            {
+                title:"ふんふんァ 2",
+                file:"ふんふんァ_2.mp3"
+            },
+            {
+                title:"ぷんぷんァ",
+                file:"ぷんぷんァ.mp3"
+            },
+            {
+                title:"ふんふんふんァ 1",
+                file:"ふんふんふんァ.mp3"
+            },
+            {
+                title:"ふんふんふんァ 2",
+                file:"ふんふんふんァ_2.mp3"
+            },
+            {
+                title:"ふんふんふんァ 3",
+                file:"ふんふんふんァ_3.mp3"
+            }
+        ]
+        
+        const n = SoundList.length;
+        
+        for(let i = 0;i<n;i++){
+            const title = SoundList[i].title;
+            const file = "./sound/" + SoundList[i].file;
+
+            const html = "<div class='content'><div class='title'>" + title + "</div><audio controls preload='metadata' class='audio'><source src='" + file + "'></audio></div>";    
+            
+            document.getElementById("SoundList").insertAdjacentHTML("beforeend",html);
+        };
+
+        document.getElementById("SoundList").insertAdjacentHTML("beforeend","<div class='content'><div class='title'>" + "元動画" + "</div><iframe src='https://www.youtube.com/embed/oxl_bCLBB_w' frameborder='0'></iframe></div>");
+
+    </script>
+</body>
+</html>
