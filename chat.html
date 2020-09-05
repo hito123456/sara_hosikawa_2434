@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ふんふんァ！</title>
+</head>
+<body>
+    <div id="SoundList"></div>
+
+    <style>
+        body{
+            background: url(./background.png) repeat;
+            background-color: #FAB80D;
+        }
+        #SoundList{
+            position: absolute;
+            width: 100%;
+            height: auto;
+            left: 0;
+        }
+        .content{
+            position: relative;
+            width: 80%;
+            height: 30%;
+            left: 9.5%;
+
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            font-weight: bold;
+            color: #FAB80D;
+            background: #FFF;
+            border: solid 3px #FAB80D;
+            border-radius: 10px;
+        }
+        .audio{
+            position: relative;
+            width: 80%;
+            left: 10%;
+        }
+        .title{
+            position: relative;
+            font-size: 5vmin;
+            text-align: center;
+        }
+    </style>
+    <script>
+        const SoundList = [
+
+            {
+                title:"全部",
+                file:"main.mp3"
+            },
+            {
+                title:"元気に / ふんァ",
+                file:"2.mp3"
+            },
+            {
+                title:"さり気なく / ぷんァ",
+                file:"3.mp3"
+            },
+            {
+                title:"やる気なく / ァ",
+                file:"1.mp3"
+            },
+            {
+                title:"興味あり / ふんふん 1",
+                file:"4.mp3"
+            },
+            {
+                title:"興味あり / ふんふん 2",
+                file:"5.mp3"
+            },
+            {
+                title:"疑問げに / ふんふんァ 1",
+                file:"6.mp3"
+            },
+            {
+                title:"元気に / ふんふんァ 2",
+                file:"7.mp3"
+            },
+            {
+                title:"適当に / ぷんぷんァ",
+                file:"8.mp3"
+            },
+            {
+                title:"元気に / ふんふんふんァ 1",
+                file:"12.mp3"
+            },
+            {
+                title:"元気に / ふんふんふんァ 2",
+                file:"10.mp3"
+            },
+            {
+                title:"ためて / ふんふんふんァ 3",
+                file:"11.mp3"
+            },
+            {
+                title:"元気に / ふんァ!ふんふんァ",
+                file:"9.mp3"
+            },
+        ]
+        
+        const n = SoundList.length;
+        
+        for(let i = 0;i<n;i++){
+            const title = SoundList[i].title;
+            const file = "./sound/" + SoundList[i].file;
+
+            const html = "<div class='content'><div class='title'>" + title + "</div><audio controls preload='metadata' class='audio'><source src='" + file + "'></audio></div>";    
+            
+            document.getElementById("SoundList").insertAdjacentHTML("beforeend",html);
+        };
+
+        document.getElementById("SoundList").insertAdjacentHTML("beforeend","<div class='content'><div class='title'>" + "元動画" + "</div><iframe src='https://www.youtube.com/embed/oxl_bCLBB_w' frameborder='0'></iframe></div>");
+
+    </script>
+</body>
+</html>
